@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+/* Teléfono en horizontal: se muestra el diseño de computadora (reducido para que quepa). En vertical, el diseño de celular. */
+(function () {
+  var m = document.querySelector('meta[name="viewport"]');
+  function set() {
+    var phone = Math.min(screen.width, screen.height) < 600;
+    var land = window.matchMedia('(orientation: landscape)').matches;
+    m.setAttribute('content', phone && land ? 'width=1280' : 'width=device-width, initial-scale=1');
+  }
+  set();
+  addEventListener('orientationchange', set);
+  addEventListener('resize', set);
+})();
+</script>
+<title>Privacy Policy | Pet Nova</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="images/logo-menu.png">
+<meta name="theme-color" content="#523F7A">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to Main Content</a>
+<header class="nav">
+  <a href="index.html" class="nav-logo"><img src="images/logo-menu.png" alt="Pet Nova"></a>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">Menu</button>
+  <nav class="nav-links">
+    <a href="index.html"><img src="images/icons/home.svg" alt="">Home</a>
+    <a href="about.html"><img src="images/icons/user.svg" alt="">About Us</a>
+    <a href="functions.html"><img src="images/icons/medkit.svg" alt="">Functions</a>
+    <a href="contact.html"><img src="images/icons/chat.svg" alt="">Contact</a>
+    <a href="privacy.html" class="on" aria-current="page"><img src="images/icons/shield.svg" alt="">Privacy Policy</a>
+  </nav>
+  <a href="login.html" class="nav-login"><span class="avatar"></span><u>LOG IN</u></a>
+</header>
+<main id="main" class="inner">
+<section class="p-sec"><h1>Privacy Policy</h1>
+<h2>Legal Disclaimer</h2>
+<p>The explanations and information provided on this page are only general and high-level explanations and information on how to write your own document of a Privacy Policy. You should not rely on this article as legal advice or as recommendations regarding what you should actually do, because we cannot know in advance what are the specific privacy policies you wish to establish between your business and your customers and visitors. We recommend that you seek legal advice to help you understand and to assist you in the creation of your own Privacy Policy.</p>
+<h2>Privacy Policy - The Basics</h2>
+<p>Having said that, a privacy policy is a statement that discloses some or all of the ways a website collects, uses, discloses, processes, and manages the data of its visitors and customers. It usually also includes a statement regarding the website’s commitment to protecting its visitors’ or customers’ privacy, and an explanation about the different mechanisms the website is implementing in order to protect privacy. Different jurisdictions have different legal obligations of what must be included in a Privacy Policy. You are responsible to make sure you are following the relevant legislation to your activities and location.</p>
+<h2>What to include in the Privacy Policy</h2>
+<p>Generally speaking, a Privacy Policy often addresses these types of issues: the types of information the website is collecting and the manner in which it collects the data; an explanation about why is the website collecting these types of information; what are the website’s practices on sharing the information with third parties; ways in which your visitors and customers can exercise their rights according to the relevant privacy legislation; the specific practices regarding minors’ data collection; and much, much more. To learn more about this, check out our article “Creating a Privacy Policy”.</p></section>
+</main>
+<footer class="footer">
+  <img class="footer-logo" src="images/logo-footer.png" alt="Pet Nova - We care for what you love">
+  <div class="footer-info"><p>La Chorrera, Panamá Oeste, Panamá</p><p>123-456-7890<br>petnovitas2027@gmail.com</p><div class="social"><a href="#" aria-label="Facebook"><img src="images/icons/facebook.svg" alt=""></a><a href="#" aria-label="Instagram"><img src="images/icons/instagram.svg" alt=""></a><a href="#" aria-label="TikTok"><img src="images/icons/tiktok.svg" alt=""></a></div></div>
+  <a class="footer-privacy" href="privacy.html">Privacy Policy</a>
+  <p class="copy"><u>©PetNova by PetNovitasTeam. Powered and secured by Wix.com</u></p>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>

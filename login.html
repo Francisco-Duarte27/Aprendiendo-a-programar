@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+/* Teléfono en horizontal: se muestra el diseño de computadora (reducido para que quepa). En vertical, el diseño de celular. */
+(function () {
+  var m = document.querySelector('meta[name="viewport"]');
+  function set() {
+    var phone = Math.min(screen.width, screen.height) < 600;
+    var land = window.matchMedia('(orientation: landscape)').matches;
+    m.setAttribute('content', phone && land ? 'width=1280' : 'width=device-width, initial-scale=1');
+  }
+  set();
+  addEventListener('orientationchange', set);
+  addEventListener('resize', set);
+})();
+</script>
+<title>Pet Nova - Cuidado Integral de Mascotas</title>
+<link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+<div class="atmos">
+  <div class="left">
+    <a href="index.html"><img class="logo" src="images/pet-nova-logo.png" alt="Pet Nova - We care for what you love"></a>
+    <span class="eyebrow">Pet Care Community</span>
+    <h1 id="title">Welcome back</h1>
+    <p id="subtitle">Log in to Pet Nova</p>
+  </div>
+  <div class="right">
+    <div class="card">
+      <div class="switch" role="tablist" aria-label="Switch between log in and create account">
+        <span class="thumb" id="thumb"></span>
+        <button type="button" class="tab on" data-mode="login" role="tab">Log In</button>
+        <button type="button" class="tab" data-mode="register" role="tab">Create Account</button>
+      </div>
+
+      <form id="login" class="pane on">
+        <label>Email<input type="email" placeholder="you@email.com" required></label>
+        <label>Password<input type="password" required></label>
+        <label class="check"><input type="checkbox"> Remember password</label>
+        <button class="btn" type="submit">Log In</button>
+      </form>
+
+      <form id="register" class="pane">
+        <div class="step on" data-step="1">
+          <h2>Step 1 · Pet Profile</h2><p class="hint">Tell us about your furry friend</p>
+          <label>Pet's Name<input type="text" placeholder="E.g. Milo, Luna"></label>
+          <div class="row">
+            <label>Species<select id="species"><option value="">Select</option><option>Dog</option><option>Cat</option><option>Bird</option><option>Rabbit</option><option>Guinea Pig</option><option>Hamster</option><option>Other</option></select></label>
+            <label>Age (years)<input type="number" min="0" max="40" placeholder="E.g. 3"></label>
+          </div>
+          <label id="breedBox" hidden>Breed<input type="text" placeholder="Select"></label>
+          <div class="row w3">
+            <label>Weight<input type="number" step="0.1" min="0" placeholder="E.g. 8.5"></label>
+            <label>Unit<select><option>kg</option><option>lb</option></select></label>
+          </div>
+          <label>Photo<span class="upload">🐾 Upload Photo<input type="file" accept="image/*"></span></label>
+        </div>
+        <div class="step" data-step="2">
+          <h2>Step 2 · Medical Record</h2><p class="hint">Important health information</p>
+          <label>Vaccinated?<select><option value="">Select</option><option>Yes, up to date</option><option>Partially vaccinated</option><option>Not vaccinated</option><option>Not sure</option></select></label>
+          <label>Special Condition?<select id="cond"><option>No</option><option>Yes</option></select></label>
+          <label id="condBox" hidden>Describe it<input type="text" placeholder="E.g. blind in one eye, limited mobility"></label>
+          <label>Medical Notes<textarea rows="4" placeholder="Optional - Important information"></textarea></label>
+        </div>
+        <div class="step" data-step="3">
+          <h2>Step 3 · Owner Details</h2><p class="hint">Your information</p>
+          <label>Full Name<input type="text"></label>
+          <label>Email<input type="email" placeholder="you@email.com"></label>
+          <div class="row"><label>Phone<input type="tel"></label><label>City<input type="text"></label></div>
+          <label>Password<input type="password" id="pw" placeholder="At least 6 characters"></label>
+          <label>Confirm Password<input type="password" id="pw2" placeholder="Repeat your password"></label>
+          <p class="err" id="err" hidden></p>
+        </div>
+        <div class="nav-btns">
+          <button type="button" class="btn ghost" id="back" hidden>Back</button>
+          <button type="button" class="btn" id="next">Next</button>
+        </div>
+        <p class="small">Already have an account? <a href="#" data-mode="login">Log in</a></p>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="js/login.js"></script>
+</body>
+</html>

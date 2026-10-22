@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+/* Teléfono en horizontal: se muestra el diseño de computadora (reducido para que quepa). En vertical, el diseño de celular. */
+(function () {
+  var m = document.querySelector('meta[name="viewport"]');
+  function set() {
+    var phone = Math.min(screen.width, screen.height) < 600;
+    var land = window.matchMedia('(orientation: landscape)').matches;
+    m.setAttribute('content', phone && land ? 'width=1280' : 'width=device-width, initial-scale=1');
+  }
+  set();
+  addEventListener('orientationchange', set);
+  addEventListener('resize', set);
+})();
+</script>
+<title>Functions | Pet Nova</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="images/logo-menu.png">
+<meta name="theme-color" content="#523F7A">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to Main Content</a>
+<header class="nav">
+  <a href="index.html" class="nav-logo"><img src="images/logo-menu.png" alt="Pet Nova"></a>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">Menu</button>
+  <nav class="nav-links">
+    <a href="index.html"><img src="images/icons/home.svg" alt="">Home</a>
+    <a href="about.html"><img src="images/icons/user.svg" alt="">About Us</a>
+    <a href="functions.html" class="on" aria-current="page"><img src="images/icons/medkit.svg" alt="">Functions</a>
+    <a href="contact.html"><img src="images/icons/chat.svg" alt="">Contact</a>
+    <a href="privacy.html"><img src="images/icons/shield.svg" alt="">Privacy Policy</a>
+  </nav>
+  <a href="login.html" class="nav-login"><span class="avatar"></span><u>LOG IN</u></a>
+</header>
+<main id="main" class="inner">
+<section class="f-hero"><div class="txt"><h1>Everything your pet needs, in one single place</h1>
+<p>Pet Nova is the app that helps you care for, connect, and celebrate every moment with your best friend</p><a class="btn" href="#features">Explore the features</a></div>
+<div class="blobdog"><i></i><img loading="lazy" decoding="async" src="images/fn-perro-hero.webp" alt=""></div></section>
+<section class="f-road" id="features"><h2>Little paws on the Road</h2>
+<p>Explore an interactive map with the best places for your pet. Find veterinarians, parks, hotels, shops, and other pet-friendly spaces based on your current location right now.</p>
+<img class="phone" loading="lazy" src="images/fn-celular-mapa.png" alt=""><span class="ic pin" style="background-image:url(images/icons/pin.svg)"></span>
+<span class="bubble b1"><span class="ic mini" style="background-image:url(images/icons/pin-ring.svg)"></span>Knino Veterinary Clinic</span>
+<span class="bubble b2"><span class="ic mini" style="background-image:url(images/icons/pin-ring.svg)"></span>Vet Medical Veterinary Care Center</span>
+<span class="bubble b3"><span class="ic mini" style="background-image:url(images/icons/pin-ring.svg)"></span>Happy Pets Veterinary Clinic Center</span></section>
+<section class="f-med"><div class="clips"><img loading="lazy" decoding="async" src="images/fn-clip-1.png" alt=""><img loading="lazy" decoding="async" src="images/fn-clip-2.png" alt=""><img loading="lazy" decoding="async" src="images/fn-clip-3.png" alt="">
+<div class="paper"><b>All Their Medical Information, Always Organized For You</b><ul><li><em><img src="images/icons/vial.svg" alt=""></em>Vaccines</li><li><em><img src="images/icons/wheat.svg" alt=""></em>Allergies</li><li><em><img src="images/icons/pills.svg" alt=""></em>Medication Records</li><li><em><img src="images/icons/folder.svg" alt=""></em>Medical History Logs</li><li><em><img src="images/icons/clipboard.svg" alt=""></em>Important Notes</li></ul></div></div>
+<div class="txt"><h2>Medical Profile Info</h2><p>Keep your pet health history always within reach. Check vaccines, allergies, treatments, medications, and medical records in one single place whenever you need them.</p></div>
+<img class="peek" loading="lazy" decoding="async" src="images/fn-collie.png" alt=""></section>
+<section class="f-paw"><div class="txt"><h2>Paw Alert</h2><p>Report and find lost pets with help from the community. Share alerts in real-time and increase the chances of a safe reunion for everyone involved.</p></div>
+<div class="stage"><i class="blob"></i><span class="bell"><i class="ic" style="background-image:url(images/icons/bell.svg)"></i></span>
+<img class="arr a1" loading="lazy" decoding="async" src="images/fn-flecha-1.png" alt=""><img class="arr a2" loading="lazy" decoding="async" src="images/fn-flecha-3.png" alt="">
+<span class="alertbox"><i class="ic" style="background-image:url(images/icons/paw-pin.svg)"></i>New lost pet alert reported near your area</span>
+<img class="app" loading="lazy" decoding="async" src="images/fn-app.png" alt=""></div></section>
+<section class="f-cal"><h2>Smart Care Calendar</h2><div class="row"><div class="cal"><img loading="lazy" decoding="async" src="images/fn-calendario.png" alt="">
+<span class="tag t1"><img src="images/icons/bath.svg" alt=""><b>Bath Day<small>May 17th<br>10:00 AM</small></b></span><span class="tag t2"><img src="images/icons/clipboard.svg" alt=""><b>Vet Appointment<small>June 23rd<br>2:00 PM</small></b></span><span class="tag t3"><img src="images/icons/syringe.svg" alt=""><b>Vaccine<small>July 30th<br>5:00 PM</small></b></span></div>
+<div class="txt"><p>Organize every care detail without worrying about forgetting an important date. Receive reminders for vaccines, vet visits, medications, and other essential pet events.</p><img loading="lazy" decoding="async" src="images/fn-cama.png" alt=""></div></div></section>
+<section class="f-moments"><h2>Pet Moments</h2><p>Every adventure deserves to be remembered. Save photos, create a digital album, and relive the most special moments together with your loyal life companion right here.</p>
+<div class="photos"><img loading="lazy" decoding="async" src="images/fn-hamster.jpg" alt=""><img loading="lazy" decoding="async" src="images/fn-collie2.jpg" alt=""><img loading="lazy" decoding="async" src="images/fn-gato-corbatin.jpg" alt=""><img loading="lazy" decoding="async" src="images/fn-perros.jpg" alt=""></div></section>
+<section class="f-close"><p>Everything your pet needs, in one place. Because every walk, every appointment, every memory, and every important moment deserves to be right at your fingertips.</p>
+<div class="pets"><img loading="lazy" decoding="async" src="images/fn-corgi.png" alt=""><img loading="lazy" decoding="async" src="images/fn-bengali.png" alt=""></div><h2>Pet Nova</h2><h3>We Care For What You Love</h3></section>
+</main>
+<footer class="footer">
+  <img class="footer-logo" src="images/logo-footer.png" alt="Pet Nova - We care for what you love">
+  <div class="footer-info"><p>La Chorrera, Panamá Oeste, Panamá</p><p>123-456-7890<br>petnovitas2027@gmail.com</p><div class="social"><a href="#" aria-label="Facebook"><img src="images/icons/facebook.svg" alt=""></a><a href="#" aria-label="Instagram"><img src="images/icons/instagram.svg" alt=""></a><a href="#" aria-label="TikTok"><img src="images/icons/tiktok.svg" alt=""></a></div></div>
+  <a class="footer-privacy" href="privacy.html">Privacy Policy</a>
+  <p class="copy"><u>©PetNova by PetNovitasTeam. Powered and secured by Wix.com</u></p>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>

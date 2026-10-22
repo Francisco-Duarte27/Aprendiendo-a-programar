@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+/* Teléfono en horizontal: se muestra el diseño de computadora (reducido para que quepa). En vertical, el diseño de celular. */
+(function () {
+  var m = document.querySelector('meta[name="viewport"]');
+  function set() {
+    var phone = Math.min(screen.width, screen.height) < 600;
+    var land = window.matchMedia('(orientation: landscape)').matches;
+    m.setAttribute('content', phone && land ? 'width=1280' : 'width=device-width, initial-scale=1');
+  }
+  set();
+  addEventListener('orientationchange', set);
+  addEventListener('resize', set);
+})();
+</script>
+<title>Contact | Pet Nova</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="images/logo-menu.png">
+<meta name="theme-color" content="#523F7A">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to Main Content</a>
+<header class="nav">
+  <a href="index.html" class="nav-logo"><img src="images/logo-menu.png" alt="Pet Nova"></a>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">Menu</button>
+  <nav class="nav-links">
+    <a href="index.html"><img src="images/icons/home.svg" alt="">Home</a>
+    <a href="about.html"><img src="images/icons/user.svg" alt="">About Us</a>
+    <a href="functions.html"><img src="images/icons/medkit.svg" alt="">Functions</a>
+    <a href="contact.html" class="on" aria-current="page"><img src="images/icons/chat.svg" alt="">Contact</a>
+    <a href="privacy.html"><img src="images/icons/shield.svg" alt="">Privacy Policy</a>
+  </nav>
+  <a href="login.html" class="nav-login"><span class="avatar"></span><u>LOG IN</u></a>
+</header>
+<main id="main" class="inner">
+<section class="c-sec"><div class="c-left"><h1>Let's talk about your pets</h1>
+<p>If you have any questions about our services or any problem, reach out to us and contact us today</p>
+<div class="c-data"><h4>TEL</h4><p>123-456-7890</p><h4>EMAIL</h4><p>petnovitas2027@gmail.com</p></div></div>
+<form class="c-card" id="contactForm"><h3>Send Us a Message</h3>
+<div class="two"><label>First name *<input type="text" required></label><label>Last name *<input type="text" required></label></div>
+<label>Email *<input type="email" required></label><label>Subject<input type="text"></label><label>Message<textarea rows="4"></textarea></label>
+<button type="submit" aria-label="Submit">Submit</button><p class="ok" hidden>Thanks for submitting!</p></form></section>
+</main>
+<footer class="footer">
+  <img class="footer-logo" src="images/logo-footer.png" alt="Pet Nova - We care for what you love">
+  <div class="footer-info"><p>La Chorrera, Panamá Oeste, Panamá</p><p>123-456-7890<br>petnovitas2027@gmail.com</p><div class="social"><a href="#" aria-label="Facebook"><img src="images/icons/facebook.svg" alt=""></a><a href="#" aria-label="Instagram"><img src="images/icons/instagram.svg" alt=""></a><a href="#" aria-label="TikTok"><img src="images/icons/tiktok.svg" alt=""></a></div></div>
+  <a class="footer-privacy" href="privacy.html">Privacy Policy</a>
+  <p class="copy"><u>©PetNova by PetNovitasTeam. Powered and secured by Wix.com</u></p>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>
