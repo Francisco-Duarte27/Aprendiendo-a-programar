@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- saved from url=(0014)about:internet -->
-<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html translate="no" lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Meet the Pet Nova Team</title>
@@ -247,6 +247,8 @@
   ];
 
   let index = 0;
+  let LANG = 'en';
+  const ES_Q = {"Passionate about creating meaningful experiences that strengthen the bond between pets and their families.": "Me apasiona crear experiencias significativas que fortalezcan el vínculo entre las mascotas y sus familias.", "Focused on turning creative ideas into practical solutions for pet owners.": "Enfocado en convertir ideas creativas en soluciones prácticas para los dueños de mascotas.", "Committed to developing innovative features that make pet care simpler and more accessible.": "Comprometido con desarrollar funciones innovadoras que hagan el cuidado de mascotas más simple y accesible.", "Driven by teamwork and creativity to build solutions that positively impact animal welfare.": "Impulsado por el trabajo en equipo y la creatividad para construir soluciones que impacten positivamente el bienestar animal.", "Dedicated to designing thoughtful experiences that put pets and their owners first.": "Dedicada a diseñar experiencias bien pensadas que pongan primero a las mascotas y a sus dueños.", "Inspired by innovation and collaboration to create a better future for companion animals.": "Inspirada por la innovación y la colaboración para crear un mejor futuro para los animales de compañía.", "Passionate about combining creativity and technology to improve the lives of pets and their families.": "Apasionada por combinar creatividad y tecnología para mejorar la vida de las mascotas y sus familias.", "Committed to bringing fresh ideas that make caring for pets easier, safer, and more enjoyable.": "Comprometida con aportar ideas frescas que hagan el cuidado de mascotas más fácil, seguro y agradable.", "Focused on creating innovative solutions that promote responsible pet ownership.": "Enfocada en crear soluciones innovadoras que promuevan la tenencia responsable de mascotas.", "Motivated by collaboration and compassion to help build a smarter pet care experience.": "Motivada por la colaboración y la compasión para ayudar a construir una experiencia de cuidado de mascotas más inteligente."};
 
   const nameEl = document.getElementById('name');
   const quoteEl = document.getElementById('quote');
@@ -263,7 +265,7 @@
     cardEl.style.background = member.color;
     initialsEl.textContent = getInitials(member.name);
     nameEl.textContent = member.name;
-    quoteEl.textContent = member.text;
+    quoteEl.textContent = LANG === 'es' ? (ES_Q[member.text] || member.text) : member.text;
     counterEl.textContent = String(index+1).padStart(2,'0') + ' / ' + team.length;
 
     cardEl.classList.remove('fade-in');
@@ -278,6 +280,18 @@
     quoteEl.classList.add('fade-in');
   }
 
+  function applyStatic(){
+    document.querySelector('.role').textContent = LANG === 'es' ? 'Equipo de Pet Nova' : 'Pet Nova Team';
+    document.getElementById('prevBtn').setAttribute('aria-label', LANG === 'es' ? 'Integrante anterior' : 'Previous team member');
+    document.getElementById('nextBtn').setAttribute('aria-label', LANG === 'es' ? 'Integrante siguiente' : 'Next team member');
+    document.documentElement.lang = LANG;
+  }
+  window.addEventListener('message', e => {
+    if (!e.data) return;
+    if (e.data.pnLang) { LANG = e.data.pnLang; applyStatic(); render(); }
+    if (e.data.pnTheme) document.documentElement.setAttribute('data-theme', e.data.pnTheme);
+  });
+  if (window.parent !== window) window.parent.postMessage({ pnAsk: 1 }, '*');
   function goTo(i){
     index = (i + team.length) % team.length;
     render();
