@@ -619,3 +619,10 @@ html[lang="es"] .coverflow figure.act .cf-front::after{content:"Toca para voltea
 @media (max-width:760px){.f-hero h1{max-width:none}.f-hero p{max-width:none}.f-close>p{max-width:none}}
 .f-close h2{font-size:clamp(54px,7.6vw,146px)}
 .f-close h3{font-size:clamp(20px,2.25vw,42px)}
+
+/* ===== Equipo en modo oscuro: el marco del carrusel no debe quedar blanco ===== */
+.ab-team iframe{color-scheme:light}
+/* ===== Perro de Medical Profile Info: se ve completo y no tapa el texto ===== */
+.f-med{padding-bottom:calc(min(26vw,420px)*.883 + 6vh)}
+.peek{bottom:0;right:7vw;width:min(26vw,420px)}
+@media (max-width:760px){.f-med{padding-bottom:calc(46vw*.883 + 4vh)}.peek{bottom:0;right:50%;transform:translateX(50%);width:46vw}}
