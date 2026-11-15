@@ -1,0 +1,21 @@
+PET NOVA - recreación del sitio
+Abre la carpeta "pet-nova" en Visual Studio Code y abre index.html en el navegador.
+
+Páginas: index.html, about.html, functions.html, contact.html, privacy.html, login.html
+Extras: team.html (carrusel del equipo, se muestra dentro de about.html)
+Carpetas: css/ (estilos), js/ (scripts), images/ (imágenes)
+
+Teléfono en horizontal: se muestra el diseño de computadora (reducido). En vertical: diseño de celular.
+Esto lo controla el script que está en el <head> de cada página (busca "Teléfono en horizontal").
+
+NOVEDADES:
+- Botón ES / EN y modo oscuro (arriba, junto a ACCESO). Se guardan en el navegador.
+- 404.html: página propia para enlaces rotos.
+- Pantalla de carga con patita (solo la primera vez de cada visita).
+- Cursor de patita y rastro de huellitas (solo con mouse).
+- Traducciones: js/i18n.js (para cambiar un texto en español, edita ese archivo).
+
+- El pie usa el logo original en inglés ("We Care for what you love"); el menú usa el original con "Cuidamos lo que amas".
+- En español se quedan en inglés: la galería de bienestar y el reverso de las tarjetas de Pet Moments (lista KEEP_EN en js/i18n.js).
+
+- panel.html: panel de la mascota que se abre al crear la cuenta (js/panel.js). Los datos se guardan solo en este dispositivo (localStorage); no hay servidor.
