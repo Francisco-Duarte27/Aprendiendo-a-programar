@@ -626,3 +626,14 @@ html[lang="es"] .coverflow figure.act .cf-front::after{content:"Toca para voltea
 .f-med{padding-bottom:calc(min(26vw,420px)*.883 + 6vh)}
 .peek{bottom:0;right:7vw;width:min(26vw,420px)}
 @media (max-width:760px){.f-med{padding-bottom:calc(46vw*.883 + 4vh)}.peek{bottom:0;right:50%;transform:translateX(50%);width:46vw}}
+
+/* ===== Paw Alert en celular vertical: el celular ya no tapa el aviso ===== */
+@media (max-width:760px){
+  .stage{position:relative;display:grid;justify-items:center;align-content:start;gap:22px;height:auto;min-height:0;padding:0 0 4vh}
+  .stage .blob{position:absolute;left:6%;right:auto;top:14%;width:96%;height:58%;z-index:0}
+  .stage>.bell,.stage>.app,.stage>.alertbox{position:relative;left:auto;right:auto;top:auto;bottom:auto;z-index:1}
+  .stage>.bell{order:1;width:76px;height:76px;justify-self:start;margin-left:2vw}
+  .stage>.app{order:2;width:min(74vw,360px);height:auto;transform:rotate(6deg);animation:none}
+  .stage>.alertbox{order:3;width:min(92vw,420px);max-width:none;margin-top:3vh}
+  .stage>.arr{display:none}
+}
