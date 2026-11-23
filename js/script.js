@@ -197,3 +197,12 @@ if (wbs.length) {
     if (window.pnApply) window.pnApply(a);
   } catch (e) {}
 })();
+
+// Huellita que acompaña el avance de la página por el borde derecho (solo en pantallas grandes)
+(function () {
+  const t = document.createElement('div'); t.className = 'pawtrack'; t.setAttribute('aria-hidden', 'true');
+  t.innerHTML = '<img src="images/icons/paw.svg" alt="">'; document.body.append(t);
+  const img = t.firstChild;
+  const upd = () => { const max = document.documentElement.scrollHeight - innerHeight; const p = max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0; img.style.top = (p * 100) + '%'; img.style.transform = 'translate(-50%,-50%) rotate(' + (p * 540 % 360 > 180 ? 20 : -20) + 'deg)'; };
+  addEventListener('scroll', upd, { passive: true }); addEventListener('resize', upd); upd();
+})();
