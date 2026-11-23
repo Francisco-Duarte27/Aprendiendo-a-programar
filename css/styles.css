@@ -637,3 +637,27 @@ html[lang="es"] .coverflow figure.act .cf-front::after{content:"Toca para voltea
   .stage>.alertbox{order:3;width:min(92vw,420px);max-width:none;margin-top:3vh}
   .stage>.arr{display:none}
 }
+
+/* ===== Sello giratorio, segunda franja y huellita del borde ===== */
+.seal{position:absolute;right:6vw;bottom:13vh;z-index:5;width:clamp(104px,12vw,190px);aspect-ratio:1;filter:drop-shadow(0 10px 22px rgba(0,0,0,.35))}
+.seal svg{width:100%;height:100%;overflow:visible}
+.seal .core{fill:#0BC1E0}
+.seal text{font:800 15px 'Poppins',sans-serif;letter-spacing:.06em;fill:#fff;text-transform:uppercase}
+.seal .es{display:none}html[lang="es"] .seal .es{display:inline}html[lang="es"] .seal .en{display:none}
+.seal .ring{transform-origin:100px 100px}
+.seal::before{content:"";position:absolute;inset:0;border-radius:50%;background:var(--purple-dark);z-index:-1}
+@media (prefers-reduced-motion:no-preference){.seal .ring{animation:sealSpin 22s linear infinite}@keyframes sealSpin{to{transform:rotate(360deg)}}}
+@media (max-width:760px){.seal{width:96px;right:4vw;bottom:11vh}.seal text{font-size:16px}}
+.ribbon-b{margin:6vh -3vw 5vh;transform:rotate(1.6deg);background:linear-gradient(90deg,var(--cyan),var(--purple) 55%,var(--purple-dark))}
+@media (prefers-reduced-motion:no-preference){.ribbon-b .track{animation:marqueeR 38s linear infinite}@keyframes marqueeR{from{transform:translateX(-50%)}to{transform:translateX(0)}}}
+.pawtrack{position:fixed;right:12px;top:110px;bottom:96px;width:0;border-left:3px dotted rgba(130,104,213,.5);z-index:55;pointer-events:none}
+.pawtrack img{position:absolute;left:50%;top:0;width:26px;height:auto;transform:translate(-50%,-50%);transition:transform .25s}
+[data-theme="dark"] .pawtrack{border-color:rgba(203,189,245,.45)}
+@media (max-width:1000px){.pawtrack{display:none}}
+@media (max-width:760px){.hero{padding-bottom:calc(15vh + 104px)!important}.seal{bottom:13vh}}
+
+/* ===== Sello bien centrado y cinta de consejos centrada entre sus vecinos ===== */
+.seal svg{display:block}
+.seal{height:auto}
+.ribbon-b{margin:calc(9vh + 2vw) -3vw 0}
+.ribbon-b + .footer{padding-top:calc(9vh + 2vw)}
